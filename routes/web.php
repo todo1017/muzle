@@ -21,8 +21,8 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::middleware(['auth'])->group(function() {
-    Route::prefix('admin')->group(function() {
+Route::middleware('auth')->group(function() {
+    Route::prefix('management')->middleware('adminscope')->group(function() {
         Route::get('/', 'Admin\TenantController@index');
     });
 });
