@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use App\Models\Game;
+use App\Models\Category;
+use App\Models\Background;
+use App\Models\Image;
+use Inertia\Inertia;
 
 class GameController extends Controller
 {
@@ -14,7 +21,14 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $games = Game::withCount('backgrounds')->withCount('categories')->get();
+        $categories = Category::all();
+        $backgrounds = Background::all();
+        return Inertia::render('Admin/Game/Index', [
+            'games' => $games,
+            'categories' => $categories,
+            'backgrounds' => $backgrounds
+        ]);
     }
 
     /**
@@ -35,7 +49,36 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'backgrounds' => 'required|array',
+            'backgrounds.*' => 'exists:backgrounds,id',
+            'categories' => 'required|array',
+            'categories.*' => 'exists:categories,id',
+            'helper' => 'required|image:png,jpg',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        $path = $request->helper->store('helper');
+        
+        $game = new Game;
+        $game->name = $request->name;
+        $game->description = $request->description;
+        $game->helper = $path;
+        $game->save();
+        $game->backgrounds()->attach($request->backgrounds);
+        $game->categories()->attach($request->categories);
+        $game = Game::withCount('backgrounds')->withCount('categories')->find($game->id);
+
+        return response()->json([
+            'game' => $game
+        ]);
     }
 
     /**

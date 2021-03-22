@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+use App\Models\Image;
+use App\Models\Category;
+use Inertia\Inertia;
 
 class ImageController extends Controller
 {
@@ -14,7 +20,12 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        $categories = Category::all();
+        return Inertia::render('Admin/Image/Index', [
+            'images' => $images,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -35,7 +46,33 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'category_id' => 'required|exists:categories,id',
+            'images' => 'required',
+            'images.*' => 'required|image:png',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        $images = [];
+
+        foreach ($request->images as $img) {
+            $path = $img->store('image');
+            $image = new Image;
+            $image->name = Str::random(16);
+            $image->src = $path;
+            $image->category_id = (int)$request->category_id;
+            $image->save();
+            array_push($images, $image);
+        }
+
+        return response()->json([
+            'images' => $images
+        ]);
     }
 
     /**
