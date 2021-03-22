@@ -23,6 +23,9 @@ require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function() {
     Route::prefix('management')->middleware('adminscope')->group(function() {
-        Route::get('/', 'Admin\TenantController@index');
+        
+        Route::get('/', 'Admin\HomeController@index');
+
+        Route::resource('tenants', Admin\TenantController::class)->except(['create', 'edit', 'show']);
     });
 });

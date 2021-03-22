@@ -680,6 +680,14 @@ eval("\n\nvar GetIntrinsic = __webpack_require__(/*! get-intrinsic */ \"./node_m
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Admin/Home/Index": [
+		"./resources/js/Pages/Admin/Home/Index.js",
+		"resources_js_Pages_Admin_Home_Index_js"
+	],
+	"./Admin/Home/Index.js": [
+		"./resources/js/Pages/Admin/Home/Index.js",
+		"resources_js_Pages_Admin_Home_Index_js"
+	],
 	"./Admin/Tenant/Index": [
 		"./resources/js/Pages/Admin/Tenant/Index.js",
 		"resources_js_Pages_Admin_Tenant_Index_js"
@@ -780,6 +788,18 @@ module.exports = webpackAsyncContext;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -810,7 +830,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + "cb1ee642b55b06234615" + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Home_Index_js":"767b5496469cacfa3ffc","resources_js_Pages_Admin_Tenant_Index_js":"3befe11ef236243aa384"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -821,6 +841,18 @@ module.exports = webpackAsyncContext;
 /******/ 			// return url for filenames based on template
 /******/ 			return "" + chunkId + ".css";
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
