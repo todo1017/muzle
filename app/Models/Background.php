@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Background extends Model
 {
     use HasFactory;
+
+    public function games()
+    {
+        return $this->belongsToMany(Background::class, 'game_background');
+    }
 }
