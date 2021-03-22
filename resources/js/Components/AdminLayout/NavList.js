@@ -17,7 +17,7 @@ const NavList = [
     Icon: BsBuilding,
   },
   {
-    path: '/management/accounts',
+    path: '/management/users',
     title: 'Users',
     Icon: FiUsers,
   },

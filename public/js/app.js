@@ -695,6 +695,14 @@ var map = {
 	"./Admin/Tenant/Index.js": [
 		"./resources/js/Pages/Admin/Tenant/Index.js",
 		"resources_js_Pages_Admin_Tenant_Index_js"
+	],
+	"./Admin/User/Index": [
+		"./resources/js/Pages/Admin/User/Index.js",
+		"resources_js_Pages_Admin_User_Index_js"
+	],
+	"./Admin/User/Index.js": [
+		"./resources/js/Pages/Admin/User/Index.js",
+		"resources_js_Pages_Admin_User_Index_js"
 	]
 };
 function webpackAsyncContext(req) {
@@ -830,7 +838,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Home_Index_js":"767b5496469cacfa3ffc","resources_js_Pages_Admin_Tenant_Index_js":"3befe11ef236243aa384"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Home_Index_js":"fb702c11ebd1fab69699","resources_js_Pages_Admin_Tenant_Index_js":"309a245a05971fa4a830","resources_js_Pages_Admin_User_Index_js":"21e74b8d88a92cbaa8f8"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
