@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Inertia\Inertia;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+require __DIR__.'/auth.php';
+
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('admin')->group(function() {
+        Route::get('/', 'Admin\TenantController@index');
+    });
 });
