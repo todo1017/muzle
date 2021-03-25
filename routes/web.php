@@ -31,4 +31,7 @@ Route::middleware('auth')->group(function() {
         Route::resource('backgrounds', Admin\BackgroundController::class)->only(['index', 'store']);
         Route::resource('games',       Admin\GameController::class)->only(['index', 'store']);
     });
+
+    Route::get('games', 'User\GameController@index');
+    Route::get('games/{id}', 'User\GameController@show');
 });

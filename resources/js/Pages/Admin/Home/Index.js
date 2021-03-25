@@ -3,7 +3,7 @@ import AdminLayout from '@/Components/AdminLayout';
 
 const Index = () => {
   return (
-    <AdminLayout>
+    <AdminLayout title="Home">
       Home
     </AdminLayout>
   );

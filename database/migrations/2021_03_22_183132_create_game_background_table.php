@@ -15,6 +15,8 @@ class CreateGameBackgroundTable extends Migration
     {
         Schema::create('game_background', function (Blueprint $table) {
             $table->id();
+            $table->integer('game_id')->unsigned();
+            $table->integer('background_id')->unsigned();
             $table->timestamps();
         });
     }

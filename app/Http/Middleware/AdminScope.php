@@ -16,7 +16,7 @@ class AdminScope
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role != 'admin') {
+        if ($request->user() && $request->user()->role != 'admin') {
             return abort(404);
         }
         return $next($request);

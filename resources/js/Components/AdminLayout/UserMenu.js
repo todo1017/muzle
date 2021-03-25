@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Menu, MenuItem } from '@material-ui/core';
-import { Inertia } from '@inertiajs/inertia'
+import { Menu, MenuItem } from '@material-ui/core';
+import axios from "axios";
 
 const UserMenu = () => {
 
@@ -14,8 +14,10 @@ const UserMenu = () => {
     setAnchorEl(null);
   };
 
-  const handleLogout = async () => {
-    Inertia.post('/logout');
+  const handleLogout = () => {
+    axios.post('/logout').then(function (response) {
+      window.location.href = '/'
+    });
   };
 
   return (
@@ -31,6 +33,15 @@ const UserMenu = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        getContentAnchorEl={null}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
       >
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>

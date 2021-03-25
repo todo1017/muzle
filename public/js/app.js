@@ -500,17 +500,6 @@ eval("\n\nvar bind = __webpack_require__(/*! function-bind */ \"./node_modules/f
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvY3NzL2FwcC5jc3M/NDFjZCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvY3NzL2FwcC5jc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/css/app.css\n");
-
-/***/ }),
-
 /***/ "./node_modules/nprogress/nprogress.js":
 /*!*********************************************!*\
   !*** ./node_modules/nprogress/nprogress.js ***!
@@ -680,6 +669,30 @@ eval("\n\nvar GetIntrinsic = __webpack_require__(/*! get-intrinsic */ \"./node_m
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Admin/Background/Index": [
+		"./resources/js/Pages/Admin/Background/Index.js",
+		"resources_js_Pages_Admin_Background_Index_js"
+	],
+	"./Admin/Background/Index.js": [
+		"./resources/js/Pages/Admin/Background/Index.js",
+		"resources_js_Pages_Admin_Background_Index_js"
+	],
+	"./Admin/Category/Index": [
+		"./resources/js/Pages/Admin/Category/Index.js",
+		"resources_js_Pages_Admin_Category_Index_js"
+	],
+	"./Admin/Category/Index.js": [
+		"./resources/js/Pages/Admin/Category/Index.js",
+		"resources_js_Pages_Admin_Category_Index_js"
+	],
+	"./Admin/Game/Index": [
+		"./resources/js/Pages/Admin/Game/Index.js",
+		"resources_js_Pages_Admin_Game_Index_js"
+	],
+	"./Admin/Game/Index.js": [
+		"./resources/js/Pages/Admin/Game/Index.js",
+		"resources_js_Pages_Admin_Game_Index_js"
+	],
 	"./Admin/Home/Index": [
 		"./resources/js/Pages/Admin/Home/Index.js",
 		"resources_js_Pages_Admin_Home_Index_js"
@@ -687,6 +700,14 @@ var map = {
 	"./Admin/Home/Index.js": [
 		"./resources/js/Pages/Admin/Home/Index.js",
 		"resources_js_Pages_Admin_Home_Index_js"
+	],
+	"./Admin/Image/Index": [
+		"./resources/js/Pages/Admin/Image/Index.js",
+		"resources_js_Pages_Admin_Image_Index_js"
+	],
+	"./Admin/Image/Index.js": [
+		"./resources/js/Pages/Admin/Image/Index.js",
+		"resources_js_Pages_Admin_Image_Index_js"
 	],
 	"./Admin/Tenant/Index": [
 		"./resources/js/Pages/Admin/Tenant/Index.js",
@@ -703,6 +724,22 @@ var map = {
 	"./Admin/User/Index.js": [
 		"./resources/js/Pages/Admin/User/Index.js",
 		"resources_js_Pages_Admin_User_Index_js"
+	],
+	"./User/Game/Index": [
+		"./resources/js/Pages/User/Game/Index.js",
+		"resources_js_Pages_User_Game_Index_js"
+	],
+	"./User/Game/Index.js": [
+		"./resources/js/Pages/User/Game/Index.js",
+		"resources_js_Pages_User_Game_Index_js"
+	],
+	"./User/Home/Index": [
+		"./resources/js/Pages/User/Home/Index.js",
+		"resources_js_Pages_User_Home_Index_js"
+	],
+	"./User/Home/Index.js": [
+		"./resources/js/Pages/User/Home/Index.js",
+		"resources_js_Pages_User_Home_Index_js"
 	]
 };
 function webpackAsyncContext(req) {
@@ -765,37 +802,6 @@ module.exports = webpackAsyncContext;
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					result = fn();
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -838,7 +844,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Home_Index_js":"fb702c11ebd1fab69699","resources_js_Pages_Admin_Tenant_Index_js":"309a245a05971fa4a830","resources_js_Pages_Admin_User_Index_js":"21e74b8d88a92cbaa8f8"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Background_Index_js":"fd2586777f7f90e6c05d","resources_js_Pages_Admin_Category_Index_js":"0a09ce15e0d50c400654","resources_js_Pages_Admin_Game_Index_js":"5538972c957f6ad9db62","resources_js_Pages_Admin_Home_Index_js":"833331e2dfa9cb3ca3b5","resources_js_Pages_Admin_Image_Index_js":"7c089ea020f28b45f1eb","resources_js_Pages_Admin_Tenant_Index_js":"8ad2305fdddabc5a9678","resources_js_Pages_Admin_User_Index_js":"32ddb3929ccde1d6f4fa","resources_js_Pages_User_Game_Index_js":"e065fba13a89a635c374","resources_js_Pages_User_Home_Index_js":"d1cf25a090e63db0b3a6"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -847,7 +853,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".css";
+/******/ 			return undefined;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -938,8 +944,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"/js/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -951,7 +956,7 @@ module.exports = webpackAsyncContext;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("css/app" != chunkId) {
+/******/ 						if(true) { // all chunks have JS
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -989,7 +994,7 @@ module.exports = webpackAsyncContext;
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		// no on chunks loaded
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
@@ -1011,7 +1016,7 @@ module.exports = webpackAsyncContext;
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			__webpack_require__.O();
+/******/ 		
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
@@ -1023,10 +1028,8 @@ module.exports = webpackAsyncContext;
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/js/app.js");
 /******/ 	
 /******/ })()
 ;

@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use App\Models\Background;
+use Inertia\Inertia;
 
 class BackgroundController extends Controller
 {
@@ -14,7 +18,10 @@ class BackgroundController extends Controller
      */
     public function index()
     {
-        //
+        $backgrounds = Background::all();
+        return Inertia::render('Admin/Background/Index', [
+            'backgrounds' => $backgrounds
+        ]);
     }
 
     /**
@@ -35,7 +42,27 @@ class BackgroundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'src' => 'required|image:png',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        $path = $request->src->store('background');
+
+        $background = new Background;
+        $background->name = $request->name;
+        $background->src = $path;
+        $background->save();
+
+        return response()->json([
+            'background' => $background
+        ]);
     }
 
     /**

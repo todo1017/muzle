@@ -49,7 +49,7 @@ class LoginRequest extends FormRequest
         $this->ensureIsNotRateLimited();
 
         $validator = Validator::make($this->all(), [
-            'tenant' => 'required|exists:users,tenant_id',
+            'tenant_id' => 'required|exists:users,tenant_id',
             'nickname' => 'required|exists:users,nickname',
             'password' => 'required',
         ]);

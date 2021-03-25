@@ -20,7 +20,7 @@ const Index = () => {
   }, []);
 
   return (
-    <AdminLayout>
+    <AdminLayout title="Tenants">
       <div className="space-y-4">
 
         <Button color="primary" variant="contained" onClick={() => setCreateForm(true)}>

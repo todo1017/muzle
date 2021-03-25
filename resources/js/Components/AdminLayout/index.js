@@ -5,7 +5,7 @@ import NavList from "./NavList";
 import NavLink from "./NavLink";
 import UserMenu from "./UserMenu";
 
-const AuthLayout = ({ children }) => {
+const AuthLayout = ({ title, children }) => {
 
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
@@ -21,11 +21,11 @@ const AuthLayout = ({ children }) => {
     <div className={clsx('flex h-screen bg-gray-50 transition-transform md:transition-none transform', { 'translate-x-64': mobileMenu })}>
 
       {/* Desktop sidemenu */}
-      <aside className="z-20 w-64 h-full overflow-y-auto bg-purple-600 text-white flex-shrink-0 absolute -left-64 md:relative md:left-0">
+      <aside className="z-20 w-64 h-full overflow-y-auto bg-yellow-900 text-white flex-shrink-0 absolute -left-64 md:relative md:left-0">
         <div className="py-4">
-          <div className="flex justify-center py-6">
+          <a className="flex justify-center py-6" href="/" >
             <img className="w-32" src="/img/logo-white.png" alt="" />
-          </div>
+          </a>
           <ul className="mt-6">
             {NavList.map(nav =>
               <NavLink key={nav.path} data={nav} />
@@ -46,6 +46,7 @@ const AuthLayout = ({ children }) => {
             >
               <AiOutlineMenu />
             </button>
+            <div className="text-black font-bold text-2xl">{title}</div>
             {/* space */}
             <div className="flex-grow"></div>
             {/* user menu */}

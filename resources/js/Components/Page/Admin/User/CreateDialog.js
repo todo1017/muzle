@@ -60,6 +60,7 @@ const CreateDialog = ({ data, setData, ...props }) => {
             <FormSelect
               control={control}
               name="tenant_id"
+              label="Tenant"
               required
               options={data.tenants}
               defaultValue={data.tenants[0].id}
@@ -67,16 +68,17 @@ const CreateDialog = ({ data, setData, ...props }) => {
               labelKey="name"
             />
           }
-          <FormTextInput control={control} name="name" required />
-          <FormTextInput control={control} name="nickname" required />
+          <FormTextInput control={control} name="name" label="Name" required />
+          <FormTextInput control={control} name="nickname" label="Nickname" required />
           <FormSelect
             control={control}
             name="role"
+            label="Role"
             required
             options={userOptions}
             defaultValue={userOptions[0].value}
           />
-          <FormTextInput control={control} name="password" required type="password" />
+          <FormTextInput control={control} name="password" label="Password" required type="password" />
           <Button variant="contained" color="primary" type="submit">
             Add
 					</Button>
