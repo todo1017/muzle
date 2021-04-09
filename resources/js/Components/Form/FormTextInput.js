@@ -21,6 +21,7 @@ function FormTextInput({ control, name, defaultValue = '', required = false }) {
       label={name.toUpperCase()}
       name={name}
       variant="outlined"
+      size="small"
       error={invalid}
       fullWidth
     />

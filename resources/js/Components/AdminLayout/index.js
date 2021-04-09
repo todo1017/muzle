@@ -34,10 +34,8 @@ const AuthLayout = ({ title, children }) => {
         </div>
       </aside>
 
-      {/* Mobile sidemenu */}
-
       <div className="flex flex-col flex-1 w-full">
-        <header className="z-10 h-16 bg-white shadow1">
+        <header className="z-10 h-16 bg-white shadow-md">
           <div className="flex items-center h-full px-6">
             {/* Mobile hamburger */}
             <button

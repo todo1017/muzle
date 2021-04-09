@@ -14,7 +14,7 @@ function FormSelect({ control, name, label = null, defaultValue = '', required =
   });
 
   return (
-    <FormControl variant="outlined" fullWidth error={invalid}>
+    <FormControl variant="outlined" size="small" fullWidth error={invalid}>
       <InputLabel id={name}>
         {label || name}
       </InputLabel>

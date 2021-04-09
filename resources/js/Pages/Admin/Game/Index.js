@@ -190,7 +190,7 @@ const Index = () => {
             </label>
 
             {/* submit */}
-            <Button variant="contained" color="primary" onClick={submit}>
+            <Button variant="contained" color="default" fullWidth onClick={submit}>
               Submit
 					  </Button>
 

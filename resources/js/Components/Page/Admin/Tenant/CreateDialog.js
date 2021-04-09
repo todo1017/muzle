@@ -30,7 +30,7 @@ const CreateDialog = ({ data, setData, ...props }) => {
   return (
     <Dialog {...props}>
       <form className="bg-transparent rounded-sm overflow-hidden max-w-md" onSubmit={handleSubmit(submit)}>
-        <div className="bg-purple-900 text-white text-center py-4">Create Tenant</div>
+        <div className="bg-yellow-900 text-white text-center py-4">Create Tenant</div>
         <div className="bg-white p-8 space-y-4">
           {status.code === 'success' &&
             <div className="py-2 text-green-600">
@@ -49,8 +49,8 @@ const CreateDialog = ({ data, setData, ...props }) => {
           }
           <FormTextInput control={control} name="name" required />
           <FormTextInput control={control} name="code" required />
-          <Button variant="contained" color="primary" type="submit">
-            Add
+          <Button variant="contained" color="default" type="submit" fullWidth>
+            Submit
 					</Button>
         </div>
       </form>

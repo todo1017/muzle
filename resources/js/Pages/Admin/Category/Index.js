@@ -18,7 +18,7 @@ const Index = () => {
     <AdminLayout title="Category">
       <div className="space-y-4">
 
-        <Button color="primary" variant="contained" onClick={() => setCreateForm(true)}>
+        <Button color="default" variant="contained" onClick={() => setCreateForm(true)}>
           New Category
         </Button>
 

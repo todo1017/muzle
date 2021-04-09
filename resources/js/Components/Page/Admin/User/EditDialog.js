@@ -21,7 +21,7 @@ const EditDialog = ({ user, data, setData, onClose, ...props }) => {
     }).catch(function (error) {
       setStatus({
         code: 'error',
-        messages: _.flatten(_.values(error.response.data.errors))
+        messages: 'error'
       });
     });
   };
@@ -47,7 +47,7 @@ const EditDialog = ({ user, data, setData, onClose, ...props }) => {
     <Dialog onClose={onClose} {...props}>
       {user &&
         <form className="bg-transparent rounded-sm overflow-hidden max-w-md" onSubmit={handleSubmit(submit)}>
-          <div className="bg-purple-900 text-white text-center py-4">Edit User</div>
+          <div className="bg-yellow-900 text-white text-center py-4">Edit User</div>
           <div className="bg-white p-8 space-y-4">
             {status.code === 'success' &&
               <div className="py-2 text-green-600">
@@ -66,10 +66,10 @@ const EditDialog = ({ user, data, setData, onClose, ...props }) => {
             }
             <FormTextInput control={control} name="name" defaultValue={user.name} required />
             <FormTextInput control={control} name="nickname" defaultValue={user.nickname} required />
-            <Button variant="contained" color="primary" type="submit" fullWidth>
+            <Button variant="contained" color="default" type="submit" fullWidth>
               Save
 					  </Button>
-            <Button variant="contained" color="secondary" type="button" fullWidth onClick={handleRemove}>
+            <Button variant="outlined" color="default" type="button" fullWidth onClick={handleRemove}>
               Remove
 					  </Button>
           </div>

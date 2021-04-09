@@ -29,7 +29,7 @@ const Index = () => {
     <AdminLayout title="Users">
       <div className="space-y-4">
 
-        <Button color="primary" variant="contained" onClick={() => setCreateForm(true)}>
+        <Button color="default" variant="contained" onClick={() => setCreateForm(true)}>
           Add User
         </Button>
 

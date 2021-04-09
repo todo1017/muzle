@@ -4,7 +4,7 @@ import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 function FormSelectNative({ name, label = null, defaultValue = '', options, valueKey = 'value', labelKey = 'label', ...props }) {
 
   return (
-    <FormControl variant="outlined" fullWidth>
+    <FormControl variant="outlined" size="small" fullWidth>
       <InputLabel id={name}>
         {label || name}
       </InputLabel>

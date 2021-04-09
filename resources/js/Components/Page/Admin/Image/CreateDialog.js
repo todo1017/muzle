@@ -41,7 +41,7 @@ const CreateDialog = ({ data, setData, ...props }) => {
   return (
     <Dialog {...props}>
       <form className="bg-transparent rounded-sm overflow-hidden max-w-md" ref={formRef}>
-        <div className="bg-purple-900 text-white text-center py-4">Upload Images</div>
+        <div className="bg-yellow-900 text-white text-center py-4">Upload Images</div>
         <div className="bg-white p-8 space-y-4">
           {status.code === 'success' &&
             <div className="py-2 text-green-600">
@@ -72,8 +72,8 @@ const CreateDialog = ({ data, setData, ...props }) => {
           <label className="block text-sm bg-gray-100 p-4">
             <input className="block w-full" type="file" name="images[]" multiple />
           </label>
-          <Button variant="contained" color="primary" onClick={submit}>
-            Add
+          <Button variant="contained" color="default" fullWidth onClick={submit}>
+            Submit
 					</Button>
         </div>
       </form>
