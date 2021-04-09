@@ -24,23 +24,24 @@ const Index = () => {
         <div className="py-8 space-y-4">
           <Paper>
             <div className="p-8 space-y-4">
-
-              <div className="space-y-1">
-                <div className="text-xl">Select Game</div>
-                <FormSelectNative
-                  options={games}
-                  valueKey="id"
-                  labelKey="name"
-                  onChange={handleGameSelect}
-                />
-              </div>
-
-              <div>
-                {data &&
+              {games.length > 0 ?
+                <div className="space-y-1">
+                  <div>Select Game</div>
+                  <FormSelectNative
+                    options={games}
+                    valueKey="id"
+                    labelKey="name"
+                    onChange={handleGameSelect}
+                  />
+                </div>
+                :
+                <div>No Game Exist</div>
+              }
+              {data &&
+                <div>
                   <Board data={data} />
-                }
-              </div>
-
+                </div>
+              }
             </div>
           </Paper>
         </div>

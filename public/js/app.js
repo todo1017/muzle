@@ -844,7 +844,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Background_Index_js":"bcfe228e494e94604297","resources_js_Pages_Admin_Category_Index_js":"fc5bd6f9bfd6dd645917","resources_js_Pages_Admin_Game_Index_js":"a290a53e52fba01347d7","resources_js_Pages_Admin_Home_Index_js":"b737b40be5396773080a","resources_js_Pages_Admin_Image_Index_js":"37d43163e38c5bd15e94","resources_js_Pages_Admin_Tenant_Index_js":"09bc84d5c5e965ec4e2b","resources_js_Pages_Admin_User_Index_js":"7fa9c02da44b8e5f23a5","resources_js_Pages_User_Game_Index_js":"dd9097b2611d0db69390","resources_js_Pages_User_Home_Index_js":"d1cf25a090e63db0b3a6"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_Admin_Background_Index_js":"bcfe228e494e94604297","resources_js_Pages_Admin_Category_Index_js":"fc5bd6f9bfd6dd645917","resources_js_Pages_Admin_Game_Index_js":"a290a53e52fba01347d7","resources_js_Pages_Admin_Home_Index_js":"b737b40be5396773080a","resources_js_Pages_Admin_Image_Index_js":"37d43163e38c5bd15e94","resources_js_Pages_Admin_Tenant_Index_js":"09bc84d5c5e965ec4e2b","resources_js_Pages_Admin_User_Index_js":"7fa9c02da44b8e5f23a5","resources_js_Pages_User_Game_Index_js":"2a79072e275268d538d5","resources_js_Pages_User_Home_Index_js":"d1cf25a090e63db0b3a6"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
